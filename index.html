@@ -2,17 +2,35 @@
 layout: default
 ---
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
+  <div id="main">
+      <div id="intro">
+      <header class="">
+        <h1>{{ site.name }}</h1>
+        <a href="spaces.html">
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+          <div id="triangle"></div>
 
-      <div class="entry">
-        {{ post.excerpt }}
+        </a>
+      </header>
+
+      <ul id="menu">
+        <li  id="about">
+        <a href="#" id="about_tigger" class="tigger">ABOUT</a>
+        <p id="about_text"> hohlal </p>
+        </li>
+        <li  id="contact">
+        <a href="#" id="contact_tigger" class="tigger">CONTACT</a>
+          <p id="contact_tigger"> mumba </p>
+        </li>
+      </ul>
       </div>
+  </div>
 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".tigger").on('click', function(){
+        $(this).siblings("p").toggleClass('visible');
+      });
+    });
+  </script>
